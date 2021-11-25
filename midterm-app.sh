@@ -13,10 +13,10 @@ echo "RUN pip install flask" >> tempdir/Dockerfile
 echo "COPY  ./templates /home/myapp/templates/" >> tempdir/Dockerfile
 echo "COPY  ./static /home/myapp/static/" >> tempdir/Dockerfile
 echo "COPY  midterm-app.py /home/myapp/" >> tempdir/Dockerfile
-echo "EXPOSE 5050" >> tempdir/Dockerfile
+echo "EXPOSE 5000" >> tempdir/Dockerfile
 echo "CMD python3 /home/myapp/midterm-app.py" >> tempdir/Dockerfile
 
 cd tempdir
 docker build -t midtermapp .
-docker run -t -d -p 5050:5050 --name midtermrunning midtermapp
+docker run -t -d -p 5000:5000 --name midtermrunning midtermapp
 docker ps -a
